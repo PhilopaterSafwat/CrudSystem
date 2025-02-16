@@ -6,7 +6,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      "/api": "http://crudsystemapp.eu-4.evennode.com"
+      "/api": {
+        target: "http://crudsystemapp.eu-4.evennode.com",
+        changeOrigin: true
+      }
     }
   }
 })

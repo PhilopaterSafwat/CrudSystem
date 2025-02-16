@@ -14,7 +14,7 @@ export default function Login() {
                 headers: {
                     "accept-language": "en",
                     "Access-Control-Allow-Origin": "*"
-                }
+                }, withCredentials: true
             })
 
             let token = data.data.token

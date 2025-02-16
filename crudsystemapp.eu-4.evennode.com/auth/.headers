@@ -1,0 +1,11 @@
+[
+  {
+    "applyTo": "login",
+    "headers": [
+      {
+        "name": "access-control-allow-origin",
+        "value": "*"
+      }
+    ]
+  }
+]

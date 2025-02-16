@@ -10,7 +10,7 @@ export default function ProtectedRoute({ children }) {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const { data } = await axios.get(`/api/user/profile/token`, {
+                const { data } = await axios.get(`https://crudsystemapp.eu-4.evennode.com/user/profile/token`, {
                     headers: {
                         "Authorization": `${token}`,
                         "accept-language": "en"

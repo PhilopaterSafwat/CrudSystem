@@ -8,7 +8,8 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "http://crudsystemapp.eu-4.evennode.com",
-        changeOrigin: true
+        changeOrigin: true,
+        rewrite: (path)=> path.replace(/^\/api/,"/api")
       }
     }
   }

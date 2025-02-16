@@ -10,7 +10,7 @@ export default function Login() {
 
     async function handleLogin(values) {
         try {
-            const { data } = await axios.post(`https://crud-system-app-api.vercel.app/auth/login`, values, {
+            const { data } = await axios.post(`http://51.21.216.100/auth/login/auth/login`, values, {
                 headers: {
                     "accept-language": "en",
                     "Access-Control-Allow-Origin": "*"

@@ -10,7 +10,7 @@ export default function Login() {
 
     async function handleLogin(values) {
         try {
-            const { data } = await axios.post(`https://crudsystemapp.eu-4.evennode.com/auth/login`, values, {
+            const { data } = await axios.post(`http://crudsystemapp.eu-4.evennode.com/auth/login`, values, {
                 headers: {
                     "accept-language": "en"
                 }

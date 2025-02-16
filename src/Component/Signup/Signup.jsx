@@ -10,7 +10,7 @@ export default function Signup() {
 
     async function handlesignup(values) {
         try {
-            const { data } = await axios.post(`https://crudsystemapp.eu-4.evennode.com/auth/signup`, values, {
+            const { data } = await axios.post(`https://crud-system-app-api.vercel.app/auth/signup`, values, {
                 headers: {
                     "accept-language": "en"
                 }

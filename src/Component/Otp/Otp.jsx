@@ -11,7 +11,7 @@ export default function Otp() {
     async function handleOtp(values) {
         try {
             const { data } = await axios.patch(
-                `https://crudsystemapp.eu-4.evennode.com/auth/confirm-email`,
+                `https://crud-system-app-api.vercel.app/auth/confirm-email`,
                 { otp: values.code, email },
                 {
                     headers: {

@@ -20,7 +20,7 @@ export default function Crud() {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get("https://crudsystemapp.eu-4.evennode.com/product/", {
+            const response = await axios.get("https://crud-system-app-api.vercel.app/product/", {
                 headers: {
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
                 }
@@ -35,7 +35,7 @@ export default function Crud() {
     };
     const fetctAddProducts = async (product) => {
         try {
-            const response = await axios.post("https://crudsystemapp.eu-4.evennode.com/product/add", product, {
+            const response = await axios.post("https://crud-system-app-api.vercel.app/product/add", product, {
                 headers: {
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
                 }
@@ -56,7 +56,7 @@ export default function Crud() {
             formData.append("attachment", attachment);
         }
         try {
-            const { data } = await axios.patch(`https://crudsystemapp.eu-4.evennode.com/product/update/${id}`, formData, {
+            const { data } = await axios.patch(`https://crud-system-app-api.vercel.app/product/update/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
@@ -95,7 +95,7 @@ export default function Crud() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`https://crudsystemapp.eu-4.evennode.com/product/delete/${id}`, {
+            await axios.delete(`https://crud-system-app-api.vercel.app/product/delete/${id}`, {
                 headers: {
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
                 }

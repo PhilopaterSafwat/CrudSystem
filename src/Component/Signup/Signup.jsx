@@ -10,7 +10,7 @@ export default function Signup() {
 
     async function handlesignup(values) {
         try {
-            const { data } = await axios.post(`http://51.21.216.100/auth/signup`, values, {
+            const { data } = await axios.post(`http://crudsystemappapi-production.up.railway.app/auth/signup`, values, {
                 headers: {
                     "accept-language": "en"
                 }

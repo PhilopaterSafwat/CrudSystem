@@ -10,7 +10,7 @@ export default function ProtectedRoute({ children }) {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const { data } = await axios.get(`http://51.21.216.100/user/profile/token`, {
+                const { data } = await axios.get(`http://crudsystemappapi-production.up.railway.app/user/profile/token`, {
                     headers: {
                         "Authorization": `${token}`,
                         "accept-language": "en"

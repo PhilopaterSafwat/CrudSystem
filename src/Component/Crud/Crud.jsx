@@ -20,7 +20,7 @@ export default function Crud() {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get("http://51.21.216.100/product/", {
+            const response = await axios.get("http://crudsystemappapi-production.up.railway.appproduct/", {
                 headers: {
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
                 }
@@ -35,7 +35,7 @@ export default function Crud() {
     };
     const fetctAddProducts = async (product) => {
         try {
-            const response = await axios.post("http://51.21.216.100/product/add", product, {
+            const response = await axios.post("http://crudsystemappapi-production.up.railway.app/product/add", product, {
                 headers: {
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
                 }
@@ -56,7 +56,7 @@ export default function Crud() {
             formData.append("attachment", attachment);
         }
         try {
-            const { data } = await axios.patch(`http://51.21.216.100/product/update/${id}`, formData, {
+            const { data } = await axios.patch(`http://crudsystemappapi-production.up.railway.app/product/update/${id}`, formData, {
                 headers: {
                     "Content-Type": "multipart/form-data",
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
@@ -95,7 +95,7 @@ export default function Crud() {
 
     const handleDelete = async (id) => {
         try {
-            await axios.delete(`http://51.21.216.100/product/delete/${id}`, {
+            await axios.delete(`http://crudsystemappapi-production.up.railway.app/product/delete/${id}`, {
                 headers: {
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
                 }

@@ -11,7 +11,7 @@ export default function Otp() {
     async function handleOtp(values) {
         try {
             const { data } = await axios.patch(
-                `http://51.21.216.100/auth/confirm-email`,
+                `http://crudsystemappapi-production.up.railway.app/auth/confirm-email`,
                 { otp: values.code, email },
                 {
                     headers: {

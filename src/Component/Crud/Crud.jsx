@@ -20,7 +20,7 @@ export default function Crud() {
 
     const fetchProducts = async () => {
         try {
-            const response = await axios.get("http://crudsystemappapi-production.up.railway.appproduct/", {
+            const response = await axios.get("http://crudsystemappapi-production.up.railway.app/product/", {
                 headers: {
                     "Authorization": JSON.parse(localStorage.getItem("Authentication"))
                 }

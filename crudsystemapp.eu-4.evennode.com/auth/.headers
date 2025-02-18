@@ -5,6 +5,10 @@
       {
         "name": "access-control-allow-origin",
         "value": "*"
+      },
+      {
+        "name": "header-name",
+        "value": "header value"
       }
     ]
   }

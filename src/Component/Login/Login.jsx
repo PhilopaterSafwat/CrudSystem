@@ -13,7 +13,6 @@ export default function Login() {
             const { data } = await axios.post(`https://crudsystemapp.eu-4.evennode.com/auth/login`, values, {
                 headers: {
                     "accept-language": "en",
-                    "Access-Control-Allow-Origin": "*"
                 }
             })
 

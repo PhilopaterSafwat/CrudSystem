@@ -163,15 +163,17 @@ export default function Crud() {
         XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
         XLSX.writeFile(wb, "ProductList.xlsx");
     };
-    const logout = ()=>{
+    const logout = () => {
         navigate('/login')
         localStorage.removeItem("Authentication")
     }
 
     return <>
-        <h1 className='text-5xl font-bold text-center py-4'>Crud System</h1>
-        <a onClick={() => { logout() }} className="cursor-pointer font-medium text-red-600 dark:text-red-500 hover:underline me-5 absolute right-10 top-7">Logout</a>
-
+        
+        <div className='flex mx-auto items-center w-full'>
+        <h1 className='text-5xl font-bold text-center py-4 mx-auto'>Crud System</h1>
+            <a onClick={() => { logout() }} className="cursor-pointer font-medium text-red-600 dark:text-red-500 hover:underline me-5 basis-8">Logout</a>
+        </div>
         <div className='container w-5/6 py-8 px-8 shadow-xl '>
             <form className='w-full flex flex-col mb-5' onSubmit={ADD} >
                 <div className="relative mb-5">
@@ -199,24 +201,24 @@ export default function Crud() {
                     </svg>loading.... </button>
                 <button onClick={() => { updateProduct() }} type='button' className={`py-3 px-4 bg-yellow-600 rounded-md text-white ms-auto ${!hidden || loadingHidden ? "hidden" : ""}`}>Update Item</button>
             </form>
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-                <div className='buttons flex justify-center'>
-                    {["All", ...Catogories]?.map((item, index) => (
-                        <button
-                            key={index}
-                            onClick={() => {
-                                setactivebutton(index);
-                                sortItems(item);
-                            }}
-                            type="button"
-                            className={`${activebutton === index ? 'bg-blue-900' : 'bg-blue-700'}
+            <div className='buttons flex flex-wrap'>
+                {["All", ...Catogories]?.map((item, index) => (
+                    <button
+                        key={index}
+                        onClick={() => {
+                            setactivebutton(index);
+                            sortItems(item);
+                        }}
+                        type="button"
+                        className={`${activebutton === index ? 'bg-blue-900' : 'bg-blue-700'}
         text-white hover:bg-blue-800
         font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 ${NewItems?.length < 1 ? "hidden" : ""}`}
-                        >
-                            {item}
-                        </button>
-                    ))}
-                </div>
+                    >
+                        {item}
+                    </button>
+                ))}
+            </div>
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
